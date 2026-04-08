@@ -1,7 +1,12 @@
 function Footer() {
   return (
-    <footer style={{ marginTop: '20px', borderTop: '1px solid #ccc', padding: '10px' }}>
-      <p>Desenvolvido por: <strong>Matheus Yamamoto Dias</strong> - PUCPR 2026</p>
+    <footer className="bg-dark text-white text-center py-3 mt-auto shadow-sm">
+      <div className="container-fluid px-4">
+        <p className="mb-0">
+          Aluno: <span className="fw-bold text">Matheus Yamamoto Dias</span> | PUCPR 2026
+        </p>
+        <small className="text-secondary">Projeto Baseado em React, Node.js e MySQL</small>
+      </div>
     </footer>
   );
 }

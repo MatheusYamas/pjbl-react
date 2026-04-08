@@ -1,26 +1,23 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Listagem from './pages/listagem';
-// import FormAtivo from './pages/FormAtivo';
-// import Detalhes from './pages/Detalhes'; // Criaremos depois
+import FormAtivo from './pages/formAtivo';
+import Detalhes from './pages/detalhes';
+import Header from './components/header';
 import Footer from './components/footer';
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
-        <nav style={{ padding: '20px', borderBottom: '1px solid #ccc', marginBottom: '20px' }}>
-          <Link to="/" style={{ marginRight: '15px', textDecoration: 'none', color: '#007BFF' }}>Listagem</Link>
-          <Link to="/cadastro" style={{ textDecoration: 'none', color: '#007BFF' }}>Cadastrar Novo Ativo</Link>
-        </nav>
-
-        <main style={{ minHeight: '60vh' }}>
+      <div className="d-flex flex-column min-vh-100 bg-light">
+        <Header />
+        <main className="container-fluid px-4 flex-grow-1 mb-5">
           <Routes>
             <Route path="/" element={<Listagem />} />
             <Route path="/cadastro" element={<FormAtivo />} />
             <Route path="/editar/:id" element={<FormAtivo />} />
+            <Route path="/detalhes/:id" element={<Detalhes />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </BrowserRouter>
